@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maison du Rivage — Admin</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <p class="site-header__eyebrow">Panou de administrare</p>
+    <h1 class="site-header__title">Rezervări</h1>
+  </header>
+
+  <main class="container container--wide">
+    <button type="button" id="toggle-analytics" class="btn btn--toggle"
+            aria-expanded="false" aria-controls="analytics-card">☰ Date Analitice</button>
+
+    <section class="card" id="analytics-card">
+      <p id="analytics-message" class="message" role="status" aria-live="polite"></p>
+      <div class="charts">
+        <div class="chart-box">
+          <h3 class="chart-box__title">Distribuția pe zone</h3>
+          <div class="chart-canvas-wrap"><canvas id="chart-zones"></canvas></div>
+        </div>
+        <div class="chart-box">
+          <h3 class="chart-box__title">Orele de vârf</h3>
+          <div class="chart-canvas-wrap"><canvas id="chart-hours"></canvas></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="card__title">Listă rezervări</h2>
+      <p id="analytics-total" class="analytics-total"></p>
+
+      <form id="filters" class="filters">
+        <div class="form__row">
+          <label class="form__label" for="f-date">Data</label>
+          <input class="form__input" type="date" id="f-date" />
+        </div>
+        <div class="form__row">
+          <label class="form__label" for="f-zone">Zona</label>
+          <select class="form__input" id="f-zone">
+            <option value="">Toate</option>
+          </select>
+        </div>
+        <div class="form__row">
+          <label class="form__label" for="f-status">Status</label>
+          <select class="form__input" id="f-status">
+            <option value="">Toate</option>
+            <option value="active">Active</option>
+            <option value="cancelled">Anulate</option>
+          </select>
+        </div>
+        <div class="form__row form__row--actions">
+          <button type="submit" class="btn btn--primary">Filtrează</button>
+          <button type="button" id="reset-filters" class="btn btn--ghost">Resetează</button>
+        </div>
+      </form>
+
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Data</th><th>Ora</th><th>Zona</th><th>Nume</th>
+              <th>Pers.</th><th>Cod</th><th>Status</th><th>Acțiune</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <p class="links"><a href="/">&larr; Site public</a></p>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

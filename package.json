@@ -1,0 +1,32 @@
+{
+  "name": "restaurant-reservations",
+  "version": "1.0.0",
+  "description": "Aplicație web pentru gestiunea rezervărilor dintr-un restaurant (proiect de licență).",
+  "main": "server.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22.5"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js",
+    "dev": "nodemon --exec \"node --disable-warning=ExperimentalWarning server.js\"",
+    "seed": "node --disable-warning=ExperimentalWarning database/seed.js"
+  },
+  "keywords": [
+    "restaurant",
+    "rezervari",
+    "express",
+    "sqlite",
+    "licenta"
+  ],
+  "author": "Sergiu Stefan Cristian",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "nodemailer": "^9.0.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

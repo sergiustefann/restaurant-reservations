@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maison du Rivage — Rezervări</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <p class="site-header__eyebrow">Restaurant &middot; Fine dining</p>
+    <h1 class="site-header__title">Maison du Rivage</h1>
+    <p class="site-header__subtitle">Rezervă-ți masa în câteva secunde</p>
+  </header>
+
+  <main class="container">
+    <section class="card" aria-labelledby="form-title">
+      <h2 id="form-title" class="card__title">Rezervare nouă</h2>
+
+      <form id="reservation-form" class="form" novalidate>
+        <div class="form__row">
+          <label class="form__label" for="name">Nume</label>
+          <input class="form__input" type="text" id="name" name="name"
+                 placeholder="Numele pe care se face rezervarea" maxlength="60" required />
+        </div>
+
+        <div class="form__row">
+          <label class="form__label" for="email">E-mail</label>
+          <input class="form__input" type="email" id="email" name="email"
+                 placeholder="adresa@exemplu.ro" maxlength="120" required />
+        </div>
+
+        <div class="form__row">
+          <label class="form__label" for="partySize">Număr de persoane</label>
+          <input class="form__input" type="number" id="partySize" name="partySize"
+                 min="1" max="20" value="2" required />
+        </div>
+
+        <div class="form__row">
+          <label class="form__label" for="date">Data</label>
+          <input class="form__input" type="date" id="date" name="date" required />
+        </div>
+
+        <div class="form__row">
+          <span class="form__label">Zona</span>
+          <div id="zones" class="zones" role="group" aria-label="Alege zona"></div>
+        </div>
+
+        <div class="form__row">
+          <span class="form__label">Ora</span>
+          <p id="slots-hint" class="form__hint">Alege întâi zona și data pentru a vedea orele libere.</p>
+          <div id="slots" class="slots" role="group" aria-label="Alege ora"></div>
+        </div>
+
+        <button type="submit" id="submit-btn" class="btn btn--primary">Confirmă rezervarea</button>
+
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <p class="links">Ai deja o rezervare? <a href="/cancel.html">Anuleaz-o aici</a>.</p>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/reservation.js"></script>
+</body>
+</html>

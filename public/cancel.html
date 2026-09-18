@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maison du Rivage — Anulare rezervare</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <p class="site-header__eyebrow">Restaurant &middot; Fine dining</p>
+    <h1 class="site-header__title">Maison du Rivage</h1>
+    <p class="site-header__subtitle">Anulează o rezervare</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2 class="card__title">Anulare rezervare</h2>
+      <p class="form__hint">Introdu codul primit la confirmarea rezervării.</p>
+
+      <form id="lookup-form" class="form" novalidate>
+        <div class="form__row">
+          <label class="form__label" for="code">Cod rezervare</label>
+          <input class="form__input" type="text" id="code" name="code"
+                 placeholder="ex. R3F9K2QX" maxlength="8" autocomplete="off" required />
+        </div>
+        <button type="submit" class="btn btn--primary">Caută rezervarea</button>
+      </form>
+
+      <div id="details" class="details" hidden>
+        <h3 class="details__title">Detalii rezervare</h3>
+        <dl class="details__list">
+          <div><dt>Nume</dt><dd id="d-name"></dd></div>
+          <div><dt>Persoane</dt><dd id="d-party"></dd></div>
+          <div><dt>Data</dt><dd id="d-date"></dd></div>
+          <div><dt>Ora</dt><dd id="d-time"></dd></div>
+          <div><dt>Zona</dt><dd id="d-zone"></dd></div>
+          <div><dt>Status</dt><dd id="d-status"></dd></div>
+        </dl>
+        <button type="button" id="cancel-btn" class="btn btn--danger">Anulează rezervarea</button>
+      </div>
+
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <p class="links"><a href="/">&larr; Înapoi la rezervări</a></p>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/cancel.js"></script>
+</body>
+</html>

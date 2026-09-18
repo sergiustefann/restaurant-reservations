@@ -1,0 +1,24 @@
+# Dependințe
+node_modules/
+
+# Configurare locală: conține parole, nu se urcă niciodată
+.env
+.env.local
+
+# Baza de date SQLite (se generează la rulare cu npm run seed)
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+
+# Notițe de lucru și scripturi ad-hoc, în afara aplicației
+/notite/
+
+# Loguri
+*.log
+npm-debug.log*
+
+# Sistem
+.DS_Store
+Thumbs.db
+desktop.ini
